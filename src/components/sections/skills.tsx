@@ -99,18 +99,22 @@ export function SkillsSection() {
   
   useGSAP(
     () => {
-      gsap.from('.skill-card', {
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 50,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: 'power3.out',
-      });
+      gsap.fromTo(
+        '.skill-card',
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
     },
     { scope: container }
   );
