@@ -9,11 +9,13 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <FeedbackSection />
-      <ResumeTailor />
+      <div className="bg-background">
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <FeedbackSection />
+        <ResumeTailor />
+      </div>
     </>
   );
 }

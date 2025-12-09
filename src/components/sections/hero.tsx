@@ -23,9 +23,9 @@ export function HeroSection() {
       bgImage={heroBg?.imageUrl || ''}
       bgImageAlt="abstract background"
       strength={300}
-      className="relative"
+      className="relative h-[calc(100vh-4rem)] -mt-16"
     >
-      <div id="about" className="h-screen text-white">
+      <div id="about" className="h-full text-white">
         <div className="absolute inset-0 bg-black/60" />
         <div className="container relative z-10 h-full flex items-center">
           <div className="grid md:grid-cols-2 gap-12 items-center">

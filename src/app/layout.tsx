@@ -42,7 +42,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main>{children}</main>
+        <main className="pt-16">{children}</main>
         <Footer />
         <Toaster />
       </body>
