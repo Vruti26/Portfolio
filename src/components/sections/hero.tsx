@@ -6,7 +6,6 @@ import { Github, Linkedin, Codepen } from 'lucide-react';
 import { portfolioData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Parallax } from 'react-parallax';
 
 const iconMap = {
   GitHub: Github,
@@ -16,29 +15,18 @@ const iconMap = {
 
 export function HeroSection() {
   const headshot = PlaceHolderImages.find(img => img.id === portfolioData.personalInfo.headshotImage);
-  const heroBg = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   return (
-    <div id="about" className="relative">
-      <Parallax
-          blur={{ min: -15, max: 15 }}
-          bgImage={heroBg?.imageUrl || ''}
-          bgImageAlt={heroBg?.description || ''}
-          strength={-200}
-          className="h-screen"
-      >
-        <div className="absolute inset-0 bg-black/50" />
-      </Parallax>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="container grid md:grid-cols-2 gap-12 items-center text-white">
+    <div id="about" className="relative text-white">
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6 items-start text-left bg-black/30 backdrop-blur-sm p-8 rounded-lg">
             <h1 className="font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
               {portfolioData.personalInfo.name}
             </h1>
-            <p className="text-xl md:text-2xl text-slate-200 font-medium">
+            <p className="text-xl md:text-2xl text-white font-medium">
               {portfolioData.personalInfo.title}
             </p>
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed">
               {portfolioData.personalInfo.bio}
             </p>
             <div className="flex items-center gap-4 mt-4">
@@ -55,7 +43,7 @@ export function HeroSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.name}
-                      className="text-slate-300 hover:text-white transition-colors"
+                      className="text-white hover:text-slate-200 transition-colors"
                     >
                       <Icon className="w-6 h-6" />
                     </Link>
@@ -84,6 +72,5 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
