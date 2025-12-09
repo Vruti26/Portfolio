@@ -78,7 +78,7 @@ export function Header() {
             <SheetContent side="left">
                 <div className="flex flex-col gap-4 p-4">
                     <Link href="/" className="flex items-center gap-2 mb-4" onClick={() => setIsMenuOpen(false)}>
-                      <CodeXml className="w-8 h-8 text-primary" />
+                      <CodeXml className="w-8 h-8 text-textheader" />
                       <span className="text-xl font-bold font-headline text-foreground">
                         Artifolio
                       </span>
