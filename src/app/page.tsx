@@ -9,13 +9,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className="relative z-10 bg-background">
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <FeedbackSection />
-        <ResumeTailor />
-      </div>
+      <SkillsSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <FeedbackSection />
+      <ResumeTailor />
     </>
   );
 }

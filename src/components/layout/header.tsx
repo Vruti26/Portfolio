@@ -25,7 +25,9 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // The hero section is the height of the viewport.
+      // We'll consider the header "scrolled" when the user has scrolled past the hero.
+      setIsScrolled(window.scrollY > window.innerHeight * 0.2);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -37,13 +39,13 @@ export function Header() {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
         isScrolled
           ? 'bg-background/80 backdrop-blur-sm border-b'
-          : 'bg-transparent'
+          : 'bg-transparent border-b border-transparent'
       )}
     >
       <div className="container flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
-          <CodeXml className="w-8 h-8 text-primary" />
-          <span className="text-xl font-bold font-headline text-foreground">
+          <CodeXml className={cn("w-8 h-8", isScrolled ? "text-primary" : "text-white")} />
+          <span className={cn("text-xl font-bold font-headline", isScrolled ? "text-foreground" : "text-white")}>
             Artifolio
           </span>
         </Link>
@@ -52,7 +54,7 @@ export function Header() {
             <Button asChild variant="ghost" key={link.name}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className={cn("text-sm font-medium transition-colors", isScrolled ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/80 hover:text-white")}
               >
                 {link.name}
               </Link>
@@ -60,15 +62,15 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-            <Button asChild>
-              <Link href="#contact">Contact Me</Link>
+            <Button asChild variant={isScrolled ? 'default' : 'outline'}>
+              <Link href="#contact" className={cn(!isScrolled && "text-white border-white hover:bg-white hover:text-primary")}>Contact Me</Link>
             </Button>
         </div>
 
         <div className="md:hidden">
            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className={cn(!isScrolled && "text-white hover:bg-white/10")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
