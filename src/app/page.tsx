@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className="relative z-10">
+      <div className="relative z-10 bg-background">
         <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />
