@@ -42,7 +42,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
         <Toaster />
       </body>

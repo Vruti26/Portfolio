@@ -2,9 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { CodeXml } from 'lucide-react';
+import { CodeXml, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -16,6 +21,7 @@ const navLinks = [
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,9 +59,42 @@ export function Header() {
             </Button>
           ))}
         </nav>
-        <Button asChild>
-          <Link href="#contact">Contact Me</Link>
-        </Button>
+        <div className="hidden md:block">
+            <Button asChild>
+              <Link href="#contact">Contact Me</Link>
+            </Button>
+        </div>
+
+        <div className="md:hidden">
+           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+                <div className="flex flex-col gap-4 p-4">
+                    <Link href="/" className="flex items-center gap-2 mb-4" onClick={() => setIsMenuOpen(false)}>
+                      <CodeXml className="w-8 h-8 text-primary" />
+                      <span className="text-xl font-bold font-headline text-foreground">
+                        Artifolio
+                      </span>
+                    </Link>
+                    {navLinks.map((link) => (
+                      <Button asChild variant="ghost" key={link.name} onClick={() => setIsMenuOpen(false)}>
+                        <Link href={link.href} className="text-lg">
+                            {link.name}
+                        </Link>
+                      </Button>
+                    ))}
+                    <Button asChild onClick={() => setIsMenuOpen(false)} className="mt-4">
+                        <Link href="#contact">Contact Me</Link>
+                    </Button>
+                </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
