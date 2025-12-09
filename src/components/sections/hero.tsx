@@ -92,7 +92,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/60" />
         </Parallax>
       )}
-      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-24 md:pt-[100px]">
+      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-[100px]">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
               <h1 className="hero-name font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
@@ -129,19 +129,28 @@ export function HeroSection() {
             </div>
             <div className="hero-image relative flex justify-center items-center">
               {headshot && (
-                <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] group">
-                  <div className="absolute inset-0 bg-primary/70 rounded-full transform transition-transform duration-500 group-hover:scale-105" />
+                <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] group">
+                  <svg
+                    className="absolute inset-0 w-full h-full"
+                    viewBox="0 0 400 400"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <clipPath id="blob-path">
+                        <path d="M356.5,230.5Q342,311,271,349.5Q200,388,127,356.5Q54,325,43,242.5Q32,160,88,96.5Q144,33,222,41.5Q300,50,341.5,125Q383,200,356.5,230.5Z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
                   <Image
                     src={headshot.imageUrl}
                     alt={headshot.description}
                     width={400}
                     height={400}
                     priority
-                    className="relative rounded-full object-cover border-8 border-background/50 shadow-2xl transform transition-transform duration-500 group-hover:scale-105"
+                    className="relative object-cover w-full h-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                    style={{ clipPath: 'url(#blob-path)' }}
                     data-ai-hint={headshot.imageHint}
                   />
-                   <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-secondary/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12" />
                 </div>
               )}
             </div>
