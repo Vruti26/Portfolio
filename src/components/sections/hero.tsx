@@ -19,17 +19,20 @@ export function HeroSection() {
   const heroBg = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   return (
-    <Parallax
-      bgImage={heroBg?.imageUrl || ''}
-      bgImageAlt="abstract background"
-      strength={300}
-      className="relative h-screen"
-    >
-      <div id="about" className="h-full text-white">
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container relative z-10 h-full flex items-center justify-center">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6 items-start text-left">
+    <div id="about" className="relative h-screen">
+      {heroBg && (
+        <Parallax
+          bgImage={heroBg.imageUrl}
+          bgImageAlt="abstract background"
+          strength={300}
+          className="h-full"
+        >
+          <div className="absolute inset-0 bg-black/60" />
+        </Parallax>
+      )}
+      <div className="container absolute inset-0 z-10 h-full flex items-center justify-center text-white pt-[100px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-10 items-start text-left">
               <h1 className="font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
                 {portfolioData.personalInfo.name}
               </h1>
@@ -81,8 +84,7 @@ export function HeroSection() {
               )}
             </div>
           </div>
-        </div>
       </div>
-    </Parallax>
+    </div>
   );
 }
