@@ -130,16 +130,13 @@ export function HeroSection() {
             <div className="hero-image relative flex justify-center items-center">
               {headshot && (
                 <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] group">
-                  <svg
-                    className="absolute inset-0 w-full h-full"
-                    viewBox="0 0 400 400"
+                   <svg
+                    className="absolute inset-0 w-full h-full text-primary/20 transform -translate-x-4 -translate-y-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+                    viewBox="0 0 100 100"
                     xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
                   >
-                    <defs>
-                      <clipPath id="blob-path" clipPathUnits="objectBoundingBox">
-                        <path d="M0.891,0.576C0.855,0.778,0.678,0.874,0.5,0.97C0.323,0.891,0.135,0.813,0.108,0.606C0.08,0.4,0.22,0.241,0.36,0.084C0.555,0.104,0.75,0.125,0.854,0.313C0.958,0.5,0.928,0.375,0.891,0.576Z" />
-                      </clipPath>
-                    </defs>
+                    <path d="M50,0C77.6,0,100,22.4,100,50S77.6,100,50,100,0,77.6,0,50,22.4,0,50,0Z" transform="scale(0.95) translate(2, 2)"/>
                   </svg>
                   <Image
                     src={headshot.imageUrl}
@@ -147,8 +144,7 @@ export function HeroSection() {
                     width={400}
                     height={400}
                     priority
-                    className="relative object-cover w-full h-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
-                    style={{ clipPath: 'url(#blob-path)' }}
+                    className="relative object-cover w-full h-full rounded-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
                     data-ai-hint={headshot.imageHint}
                   />
                 </div>
