@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Linkedin, Codepen } from 'lucide-react';
@@ -8,6 +8,8 @@ import { portfolioData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Parallax } from 'react-parallax';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const iconMap = {
   GitHub: Github,
@@ -19,6 +21,48 @@ export function HeroSection() {
   const headshot = PlaceHolderImages.find(img => img.id === portfolioData.personalInfo.headshotImage);
   const heroBg = PlaceHolderImages.find(img => img.id === 'hero-bg');
   const [isMobile, setIsMobile] = useState(false);
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.from('.hero-name', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out',
+        delay: 0.2,
+      });
+      gsap.from('.hero-title', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out',
+        delay: 0.4,
+      });
+      gsap.from('.hero-bio', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out',
+        delay: 0.6,
+      });
+      gsap.from('.hero-buttons', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out',
+        delay: 0.8,
+      });
+      gsap.from('.hero-image', {
+        duration: 1.2,
+        scale: 0.9,
+        opacity: 0,
+        ease: 'power3.out',
+        delay: 1,
+      });
+    },
+    { scope: container }
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +78,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div id="about" className="relative h-screen">
+    <div id="about" className="relative h-screen" ref={container}>
       {heroBg && (
         <Parallax
           bgImage={heroBg.imageUrl}
@@ -45,19 +89,19 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/60" />
         </Parallax>
       )}
-      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-[100px]">
+      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-24 md:pt-[100px]">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
-              <h1 className="font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
+              <h1 className="hero-name font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
                 {portfolioData.personalInfo.name}
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground font-medium">
+              <p className="hero-title text-xl md:text-2xl text-primary-foreground font-medium">
                 {portfolioData.personalInfo.title}
               </p>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-lg">
+              <p className="hero-bio text-lg text-primary-foreground/90 leading-relaxed max-w-lg">
                 {portfolioData.personalInfo.bio}
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+              <div className="hero-buttons flex flex-col sm:flex-row items-center gap-4 mt-4">
                 <Button size="lg" asChild>
                   <Link href="#projects">View My Work</Link>
                 </Button>
@@ -80,7 +124,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-            <div className="relative hidden md:flex justify-center items-center">
+            <div className="hero-image relative hidden md:flex justify-center items-center">
               {headshot && (
                 <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] group">
                   <div className="absolute inset-0 bg-primary/70 rounded-full transform transition-transform duration-500 group-hover:scale-105" />
