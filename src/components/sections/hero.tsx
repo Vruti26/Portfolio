@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Linkedin, Codepen } from 'lucide-react';
@@ -17,6 +18,20 @@ const iconMap = {
 export function HeroSection() {
   const headshot = PlaceHolderImages.find(img => img.id === portfolioData.personalInfo.headshotImage);
   const heroBg = PlaceHolderImages.find(img => img.id === 'hero-bg');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div id="about" className="relative h-screen">
@@ -24,25 +39,25 @@ export function HeroSection() {
         <Parallax
           bgImage={heroBg.imageUrl}
           bgImageAlt="abstract background"
-          strength={300}
+          strength={isMobile ? 100 : 300}
           className="h-full"
         >
           <div className="absolute inset-0 bg-black/60" />
         </Parallax>
       )}
-      <div className="container absolute inset-0 z-10 h-full flex items-center justify-center text-white pt-[100px]">
+      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-[100px]">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-10 items-start text-left">
+            <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
               <h1 className="font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
                 {portfolioData.personalInfo.name}
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground font-medium">
                 {portfolioData.personalInfo.title}
               </p>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed">
+              <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-lg">
                 {portfolioData.personalInfo.bio}
               </p>
-              <div className="flex items-center gap-4 mt-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
                 <Button size="lg" asChild>
                   <Link href="#projects">View My Work</Link>
                 </Button>
