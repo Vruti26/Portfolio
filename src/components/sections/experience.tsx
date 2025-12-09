@@ -1,9 +1,37 @@
+'use client';
+
+import { useRef } from 'react';
 import { portfolioData } from '@/lib/data';
 import { Briefcase } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function ExperienceSection() {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.from('.timeline-item', {
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+        opacity: 0,
+        x: (index) => (index % 2 === 0 ? -100 : 100),
+        stagger: 0.3,
+        duration: 0.8,
+        ease: 'power3.out',
+      });
+    },
+    { scope: container }
+  );
+
   return (
-    <section id="experience" className="w-full py-20 bg-secondary">
+    <section id="experience" className="w-full py-20 bg-secondary" ref={container}>
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">My Professional Journey</h2>
@@ -15,7 +43,7 @@ export function ExperienceSection() {
           <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border" aria-hidden="true" />
           <div className="relative flex flex-col gap-12">
             {portfolioData.experience.map((item, index) => (
-              <div key={index} className="flex justify-center items-center">
+              <div key={index} className="timeline-item flex justify-center items-center">
                 <div className="relative w-full max-w-4xl flex items-center" style={{
                   flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'
                 }}>

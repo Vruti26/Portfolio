@@ -1,3 +1,6 @@
+'use client';
+
+import { useRef } from 'react';
 import { portfolioData } from '@/lib/data';
 import { Card } from '@/components/ui/card';
 import {
@@ -9,6 +12,11 @@ import {
 import { Code, Database, DraftingCompass } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 import type { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // A mapping from skill names to Lucide icons or custom SVGs
 const skillIcons: { [key: string]: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>> | ((props: React.SVGProps<SVGSVGElement>) => JSX.Element) } = {
@@ -87,8 +95,28 @@ const skillIcons: { [key: string]: ForwardRefExoticComponent<Omit<LucideProps, "
 };
 
 export function SkillsSection() {
+  const container = useRef(null);
+  
+  useGSAP(
+    () => {
+      gsap.from('.skill-card', {
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+        opacity: 0,
+        y: 50,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power3.out',
+      });
+    },
+    { scope: container }
+  );
+  
   return (
-    <section id="skills" className="w-full py-20 bg-secondary">
+    <section id="skills" className="w-full py-20 bg-secondary" ref={container}>
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">My Arsenal of Skills</h2>
@@ -103,7 +131,7 @@ export function SkillsSection() {
               return (
                 <Tooltip key={skill.name}>
                   <TooltipTrigger asChild>
-                    <Card className="flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-primary aspect-square">
+                    <Card className="skill-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-primary aspect-square">
                       <Icon className="w-12 h-12 text-primary" />
                     </Card>
                   </TooltipTrigger>

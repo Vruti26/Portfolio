@@ -10,6 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Parallax } from 'react-parallax';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const iconMap = {
   GitHub: Github,
@@ -124,9 +127,9 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-            <div className="hero-image relative hidden md:flex justify-center items-center">
+            <div className="hero-image relative flex justify-center items-center">
               {headshot && (
-                <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] group">
+                <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] group">
                   <div className="absolute inset-0 bg-primary/70 rounded-full transform transition-transform duration-500 group-hover:scale-105" />
                   <Image
                     src={headshot.imageUrl}
@@ -137,8 +140,8 @@ export function HeroSection() {
                     className="relative rounded-full object-cover border-8 border-background/50 shadow-2xl transform transition-transform duration-500 group-hover:scale-105"
                     data-ai-hint={headshot.imageHint}
                   />
-                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-secondary/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12" />
+                   <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" />
+                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-secondary/70 rounded-full opacity-70 transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12" />
                 </div>
               )}
             </div>
