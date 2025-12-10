@@ -67,7 +67,7 @@ export function HeroSection() {
   );
 
   return (
-    <div id="about" className="relative h-[120vh] overflow-hidden" ref={container}>
+    <div id="about" className="relative h-[100vh] overflow-hidden" ref={container}>
       {heroBg && (
         <>
           <Image

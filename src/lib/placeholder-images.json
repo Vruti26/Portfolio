@@ -29,24 +29,6 @@
       "description": "Screenshot of the third project.",
       "imageUrl": "https://images.unsplash.com/photo-1554793000-245d3a3c2a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY1MTg3ODcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern architecture"
-    },
-    {
-      "id": "avatar-1",
-      "description": "Avatar for the first testimonial.",
-      "imageUrl": "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmYWNlJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc2NTI1OTkwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "face professional"
-    },
-    {
-      "id": "avatar-2",
-      "description": "Avatar for the second testimonial.",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2NTIyODY0NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person smiling"
-    },
-    {
-      "id": "avatar-3",
-      "description": "Avatar for the third testimonial.",
-      "imageUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NTIzMzE2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait"
     }
   ]
 }

@@ -35,18 +35,10 @@ export type Experience = {
   description: string[];
 };
 
-export type Feedback = {
-  quote: string;
-  author: string;
-  role: string;
-  avatarImage: string;
-};
-
 export type PortfolioData = {
   personalInfo: PersonalInfo;
   socialLinks: SocialLink[];
   skills: Skill[];
   projects: Project[];
   experience: Experience[];
-  feedback: Feedback[];
 };
