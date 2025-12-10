@@ -124,10 +124,10 @@ export function HeroSection() {
                   <Image
                     src={headshot.imageUrl}
                     alt={headshot.description}
-                    width={100}
+                    width={200}
                     height={100}
                     priority
-                    className="relative object-cover w-[200px] h-full rounded-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                    className="relative object-cover w-[300px] h-[300px] rounded-full shadow-2xl transition-transform duration-500 group-hover:scale-205"
                     data-ai-hint={headshot.imageHint}
                   />
                

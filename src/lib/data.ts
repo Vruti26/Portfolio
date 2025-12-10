@@ -32,6 +32,16 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
+      title: 'Secret Letters – Personalized Message Generator',
+      description:
+        'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
+      image: 'project-2',
+      liveSiteUrl: 'https://vrletter.vercel.app',
+      repositoryUrl: 'https://github.com/Vruti26/Letter',
+      tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
+    },
+    {
+      
       title: 'Agritech Platform (AgroChain)',
       description:
       'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
@@ -46,15 +56,7 @@ export const portfolioData: PortfolioData = {
         'NDVI',
         'Tailwind CSS'],  
       },
-      {
-        title: 'Secret Letters – Personalized Message Generator',
-        description:
-          'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
-        image: 'project-2',
-        liveSiteUrl: '#',
-        repositoryUrl: '#',
-        tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
-      },
+     
     
   ],
   experience: [

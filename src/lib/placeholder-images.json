@@ -3,7 +3,7 @@
     {
       "id": "headshot",
       "description": "A professional headshot of the portfolio owner.",
-      "imageUrl": "https://images.unsplash.com/photo-1586299485759-f62264d6b63f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdCUyMHBlcnNvbnxlbnwwfHx8fDE3NjUxOTMxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/image.jpg",
       "imageHint": "portrait person"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": "project-2",
       "description": "Screenshot of the second project.",
-      "imageUrl": "/images/project-2-screenshot.png",
+      "imageUrl": "/images/abcd.png",
       "imageHint": "website design"
     },
     {
