@@ -45,7 +45,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <CodeXml className={cn("w-8 h-8", isScrolled ? "text-primary" : "text-white")} />
           <span className={cn("text-xl font-bold font-headline", isScrolled ? "text-foreground" : "text-white")}>
-            Artifolio
+          Portfolio
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-2">
@@ -79,7 +79,7 @@ export function Header() {
                     <Link href="/" className="flex items-center gap-2 mb-4" onClick={() => setIsMenuOpen(false)}>
                       <CodeXml className="w-8 h-8 text-textheader" />
                       <span className="text-xl font-bold font-headline text-foreground">
-                        Artifolio
+                        Portfolio
                       </span>
                     </Link>
                     {navLinks.map((link) => (

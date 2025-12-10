@@ -3,18 +3,18 @@ import type { PortfolioData } from './types';
 export const portfolioData: PortfolioData = {
   personalInfo: {
     name: 'Vruti Rupapara',
-    title: 'Creative Full-Stack Developer',
-    bio: "I'm a passionate developer with a knack for creating elegant solutions in the least amount of time. I specialize in turning complex problems into simple, beautiful, and intuitive designs. I'm always looking for new challenges and opportunities to learn and grow.",
+    title: 'Creative Developer',
+    bio: "CE student at GEC Gandhinagar skilled in Next.js, GSAP, DSA, Firebase, and databases. I’ve built projects in Web3, AI, agritech, and UI-rich applications, and I love creating fast, scalable, and user-centric solutions",
     contact: {
-      email: 'your.email@example.com',
-      phone: '+1 (123) 456-7890',
+      email: 'rupaparavruti@gmail.com.com',
+      phone: '+1 (91) 7861880391',
     },
     headshotImage: 'headshot',
   },
   socialLinks: [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/your-profile' },
-    { name: 'GitHub', url: 'https://github.com/your-username' },
-    { name: 'CodePen', url: 'https://codepen.io/your-username' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vruti-rupapara' },
+    { name: 'GitHub', url: 'https://github.com/Vruti26' },
+    { name: 'CodePen', url: 'https://codepen.io/Vruti26' },
   ],
   skills: [
     
@@ -31,55 +31,61 @@ export const portfolioData: PortfolioData = {
     { name: 'MongoDB', proficiency: 80 },
    
     { name: 'Git & GitHub', proficiency: 90 },
+
+    { name: 'My Custom Skill', proficiency: 100 },
   
   ],
   projects: [
     {
-      title: 'Project Alpha',
+      title: 'Agritech Platform (AgroChain)',
       description:
-      'This is where you can describe Project Alpha. Explain the problem it solves, the technologies you used, and your specific role. Make it engaging and informative.',
+      'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
       image: 'project-1',
       liveSiteUrl: '#',
       repositoryUrl: '#',
-      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],  
+      tags: ['Sentinel API',
+        'Next.js',
+        'TypeScript',
+       'Remote Sensing',
+        
+        'NDVI',
+        'Tailwind CSS'],  
       },
       {
-        title: 'Project Beta',
+        title: 'Secret Letters – Personalized Message Generator',
         description:
-          'Describe Project Beta here. What was the challenge? What was the outcome? Highlight key features and what you learned from the experience.',
+          'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
         image: 'project-2',
         liveSiteUrl: '#',
         repositoryUrl: '#',
-        tags: ['React', 'GSAP', 'Framer Motion', 'UI/UX'],
+        tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
       },
-    {
-      title: 'Project Gamma',
-      description: 'Provide a brief but powerful description of Project Gamma. Focus on the results and the skills you demonstrated.',
-      image: 'project-3',
-      liveSiteUrl: '#',
-      repositoryUrl: '#',
-      tags: ['UI/UX', 'Figma', 'User Research'],
-    },
+    
   ],
   experience: [
     {
-      role: 'Your Most Recent Role',
-      company: 'Company Name',
-      period: 'Year – Present',
+      role: 'Design Lead',
+      company: 'Club IDE – GEC Gandhinagar',
+      period: '2024 – 2025',
       description: [
-        'Describe your responsibilities and achievements in this role.',
-        'Use bullet points to list key contributions.',
-        'Quantify your impact whenever possible (e.g., "Increased performance by 30%").',
+        'Led the design team and created frameworks for social media posts, newsletters, flyers, and event branding.',
       ],
     },
     {
-      role: 'Previous Role',
-      company: 'Another Company',
-      period: 'Year – Year',
+      role: 'Event Coordinator – Hack the Spring 2025',
+      company: 'Club IDE – GEC Gandhinagar',
+      period: 'Feb 2025',
       description: [
-        'Summarize your contributions and learnings from this position.',
-        'Focus on skills and experiences that are relevant to the jobs you are applying for.',
+        'Coordinated and managed the execution of Hack the Spring 2025 hackathon held on 28 Feb 2025.',
       ],
     },
-  ],
+    {
+      role: 'Volunteer',
+      company: 'Club IDE – GEC Gandhinagar',
+      period: '2023 – 2024',
+      description: [
+        'Contributed actively to club activities including event assistance, promotional work, and student engagement.',
+      ],
+    },
+  ]
 };
