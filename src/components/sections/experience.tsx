@@ -31,7 +31,7 @@ export function ExperienceSection() {
   );
 
   return (
-    <section id="experience" className="w-full py-20 bg-secondary" ref={container}>
+    <section id="experience" className="w-full py-20 bg-secondary overflow-hidden" ref={container}>
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">My Professional Journey</h2>
