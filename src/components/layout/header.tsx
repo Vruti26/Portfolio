@@ -25,17 +25,17 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Consider the header "scrolled" when the user has scrolled past 20% of the hero.
-      setIsScrolled(window.scrollY > window.innerHeight * 0.2);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-70 transition-all duration-300 ease-in-out',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
         isScrolled
           ? 'bg-background/80 backdrop-blur-sm border-b'
           : 'bg-transparent border-b border-transparent'
@@ -69,7 +69,7 @@ export function Header() {
         <div className="md:hidden">
            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(!isScrolled && "text-black hover:bg-black/10")}>
+              <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-foreground" : "text-black", "hover:bg-black/10")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>

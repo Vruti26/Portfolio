@@ -16,7 +16,7 @@ export function Footer() {
            <CodeXml className="w-8 h-8 text-primary" />
           <h2 className="text-3xl font-headline">Artifolio</h2>
         </div>
-        <p className="max-w-md mx-auto text-muted-foreground mb-6">
+        <p className="max-w-md mx-auto text-muted-foreground mb-6 text-justify">
           Thank you for visiting my portfolio. Let&apos;s connect and create something amazing together.
         </p>
         <div className="flex justify-center gap-4 mb-8">

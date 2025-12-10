@@ -81,7 +81,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div id="about" className="relative h-screen" ref={container}>
+    <div id="about" className="relative h-screen overflow-hidden" ref={container}>
       {heroBg && (
         <Parallax
           bgImage={heroBg.imageUrl}
@@ -92,7 +92,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/70" />
         </Parallax>
       )}
-      <div className="container absolute inset-0 z-70 flex h-full items-center justify-center text-white pt-40">
+      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center pt-[140px] md:pt-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
               <h1 className="hero-name font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
@@ -101,7 +101,7 @@ export function HeroSection() {
               <p className="hero-title text-xl md:text-2xl text-primary-foreground font-medium">
                 {portfolioData.personalInfo.title}
               </p>
-              <p className="hero-bio text-lg text-primary-foreground/90 leading-relaxed max-w-lg">
+              <p className="hero-bio text-lg text-primary-foreground/90 leading-relaxed max-w-lg text-justify">
                 {portfolioData.personalInfo.bio}
               </p>
               <div className="hero-buttons flex flex-col sm:flex-row items-center gap-4 mt-4">
