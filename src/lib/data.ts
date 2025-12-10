@@ -26,13 +26,8 @@ export const portfolioData: PortfolioData = {
     { name: 'JavaScript', proficiency: 95 },
 
     { name: 'Solidity (Beginner)', proficiency: 65 },
- 
-    
-    { name: 'MongoDB', proficiency: 80 },
-   
     { name: 'Git & GitHub', proficiency: 90 },
 
-    { name: 'My Custom Skill', proficiency: 100 },
   
   ],
   projects: [
