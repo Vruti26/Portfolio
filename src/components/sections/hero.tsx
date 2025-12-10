@@ -1,14 +1,13 @@
 
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Linkedin, Codepen } from 'lucide-react';
 import { portfolioData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Parallax } from 'react-parallax';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -24,7 +23,6 @@ const iconMap = {
 export function HeroSection() {
   const headshot = PlaceHolderImages.find(img => img.id === portfolioData.personalInfo.headshotImage);
   const heroBg = PlaceHolderImages.find(img => img.id === 'hero-bg');
-  const [isMobile, setIsMobile] = useState(false);
   const container = useRef(null);
 
   useGSAP(
@@ -68,30 +66,20 @@ export function HeroSection() {
     { scope: container }
   );
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div id="about" className="relative h-[120vh] overflow-hidden" ref={container}>
       {heroBg && (
-        <Parallax
-          bgImage={heroBg.imageUrl}
-          bgImageAlt="abstract background"
-          strength={isMobile ? 100 : 400}
-          className="h-full"
-        >
+        <>
+          <Image
+            src={heroBg.imageUrl}
+            alt="abstract background"
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint={heroBg.imageHint}
+          />
           <div className="absolute inset-0 bg-black/70" />
-        </Parallax>
+        </>
       )}
       <div className="container absolute inset-0 z-10 flex h-full items-center justify-center pt-[140px] md:pt-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
