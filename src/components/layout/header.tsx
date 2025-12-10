@@ -61,8 +61,8 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-            <Button asChild variant={isScrolled ? 'default' : 'outline'}>
-              <Link href="#contact" className={cn(!isScrolled && "text-white border-white hover:bg-white hover:text-white")}>Contact Me</Link>
+            <Button asChild variant={isScrolled ? 'default' : 'secondary'}>
+              <Link href="#contact">Contact Me</Link>
             </Button>
         </div>
 
