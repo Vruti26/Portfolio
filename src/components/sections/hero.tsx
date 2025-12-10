@@ -67,7 +67,7 @@ export function HeroSection() {
   );
 
   return (
-    <div id="about" className="relative h-[120vh] overflow-hidden" ref={container}>
+    <div id="about" className="relative h-[160vh] overflow-hidden" ref={container}>
       {heroBg && (
         <>
           <Image
@@ -81,7 +81,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/70" />
         </>
       )}
-      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center pt-[140px] md:pt-16">
+      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center pt-[200px] md:pt-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
               <h1 className="hero-name font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
@@ -117,18 +117,21 @@ export function HeroSection() {
               </div>
             </div>
           
-            <div className="hero-image relative flex justify-center items-center">
+            <div className="hero-image relative flex justify-center items-center w-[450px] h-[450px] group">
               {headshot && (
-                <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] group">
-                   <svg
-                    className="absolute w-[120%] h-[120%] text-primary/20 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
-                    viewBox="0 0 100 100"
+                <>
+                  <svg
+                    className="absolute w-full h-full text-secondary -translate-x-4 -translate-y-4"
+                    viewBox="0 0 200 200"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
+                    transform="scale(1.2)"
                   >
-                    <path d="M50,0C77.6,0,100,22.4,100,50S77.6,100,50,100,0,77.6,0,50,22.4,0,50,0Z" />
+                    <path
+                      fill="currentColor"
+                      d="M45.5,-63.4C59.2,-55.4,70.8,-42.6,76.5,-27.6C82.2,-12.6,82.1,4.7,75.9,19.2C69.7,33.7,57.5,45.4,44.4,55.7C31.3,66,15.7,74.9,0.3,74.6C-15,74.4,-30,65,-43.3,54.7C-56.6,44.4,-68.2,33.2,-74,18.9C-79.8,4.6,-80,-12.7,-72.9,-27.1C-65.8,-41.5,-51.4,-53,-37.2,-60.9C-23,-68.8,-9.1,-73.1,3.8,-75C16.8,-76.9,33.7,-77.2,45.5,-63.4Z"
+                      transform="translate(100 100)"
+                    />
                   </svg>
-                 
                   <Image
                     src={headshot.imageUrl}
                     alt={headshot.description}
@@ -138,7 +141,7 @@ export function HeroSection() {
                     className="relative object-cover w-full h-full rounded-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
                     data-ai-hint={headshot.imageHint}
                   />
-                </div>
+                </>
               )}
             </div>
           </div>
