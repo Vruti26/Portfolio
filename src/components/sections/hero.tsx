@@ -86,13 +86,13 @@ export function HeroSection() {
         <Parallax
           bgImage={heroBg.imageUrl}
           bgImageAlt="abstract background"
-          strength={isMobile ? 100 : 300}
+          strength={isMobile ? 100 : 400}
           className="h-full"
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/70" />
         </Parallax>
       )}
-      <div className="container absolute inset-0 z-10 flex h-full items-center justify-center text-white pt-[100px]">
+      <div className="container absolute inset-0 z-70 flex h-full items-center justify-center text-white pt-40">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-8 items-center md:items-start text-center md:text-left">
               <h1 className="hero-name font-headline text-5xl md:text-7xl font-bold text-white tracking-tighter">
