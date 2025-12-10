@@ -2,7 +2,7 @@ import type { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: 'Alex Doe',
+    name: 'Vruti Rupapara',
     title: 'Creative Full-Stack Developer',
     bio: "I'm a passionate developer and designer with a knack for creating elegant, efficient, and user-centric digital experiences. With a strong foundation in both front-end and back-end technologies, I love bringing ideas to life from concept to deployment. My goal is to build things that are not only functional but also beautiful and a joy to use.",
     contact: {
