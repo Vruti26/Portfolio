@@ -38,7 +38,7 @@ export function Footer() {
         </div>
         <div className="border-t pt-6 text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} {portfolioData.personalInfo.name}. All Rights Reserved.</p>
-          <p>Built with Next.js and Tailwind CSS.</p>
+          
         </div>
       </div>
     </footer>

@@ -2,9 +2,9 @@ import type { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: 'Your Name Here',
-    title: 'Your Professional Title (e.g., Creative Full-Stack Developer)',
-    bio: 'Write a short, engaging bio about yourself here. Mention your key skills, what you are passionate about, and what you are looking for. Make it professional but also personal.',
+    name: 'Vruti Rupapara',
+    title: 'Creative Full-Stack Developer',
+    bio: "I'm a passionate developer with a knack for creating elegant solutions in the least amount of time. I specialize in turning complex problems into simple, beautiful, and intuitive designs. I'm always looking for new challenges and opportunities to learn and grow.",
     contact: {
       email: 'your.email@example.com',
       phone: '+1 (123) 456-7890',
@@ -35,26 +35,26 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      title: 'Your First Project Title',
+      title: 'Project Alpha',
       description:
-      'Replace this with a compelling description of your project. Talk about the problem it solves, the technologies used, and your role in its development. Keep it concise and impactful.',
+      'This is where you can describe Project Alpha. Explain the problem it solves, the technologies you used, and your specific role. Make it engaging and informative.',
       image: 'project-1',
       liveSiteUrl: '#',
       repositoryUrl: '#',
       tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],  
       },
       {
-        title: 'Your Second Project Title',
+        title: 'Project Beta',
         description:
-          'Another great project of yours. Describe what makes it unique, the challenges you faced, and what you learned. Highlight key features and outcomes.',
+          'Describe Project Beta here. What was the challenge? What was the outcome? Highlight key features and what you learned from the experience.',
         image: 'project-2',
         liveSiteUrl: '#',
         repositoryUrl: '#',
         tags: ['React', 'GSAP', 'Framer Motion', 'UI/UX'],
       },
     {
-      title: 'Your Third Project Title',
-      description: 'A brief and compelling description of your third project. Highlight your role and the outcomes. Show off your skills and the value you brought to the project.',
+      title: 'Project Gamma',
+      description: 'Provide a brief but powerful description of Project Gamma. Focus on the results and the skills you demonstrated.',
       image: 'project-3',
       liveSiteUrl: '#',
       repositoryUrl: '#',
