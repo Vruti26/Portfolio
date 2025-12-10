@@ -81,7 +81,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div id="about" className="relative h-[110vh] overflow-hidden" ref={container}>
+    <div id="about" className="relative h-[120vh] overflow-hidden" ref={container}>
       {heroBg && (
         <Parallax
           bgImage={heroBg.imageUrl}
@@ -130,7 +130,7 @@ export function HeroSection() {
           
             <div className="hero-image relative flex justify-center items-center">
               {headshot && (
-                <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] group">
+                <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] group">
                    <svg
                     className="absolute inset-0 w-full h-full text-primary/20 transform -translate-x-4 -translate-y-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
                     viewBox="0 0 100 100"
@@ -145,8 +145,8 @@ export function HeroSection() {
                   <Image
                     src={headshot.imageUrl}
                     alt={headshot.description}
-                    width={420}
-                    height={420}
+                    width={450}
+                    height={450}
                     priority
                     className="relative object-cover w-full h-full rounded-full shadow-2xl transition-transform duration-500 group-hover:scale-105"
                     data-ai-hint={headshot.imageHint}
