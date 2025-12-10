@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
@@ -132,14 +133,12 @@ export function HeroSection() {
               {headshot && (
                 <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] group">
                    <svg
-                    className="absolute inset-0 w-full h-full text-primary/20 transform -translate-x-4 -translate-y-4 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+                    className="absolute w-[120%] h-[120%] text-primary/20 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
                     viewBox="0 0 100 100"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                  >  <filter id="vignetteFilter" x="-50%" y="-50%" width="200%" height="200%">
-                    <path d="M50,0C77.6,0,100,22.4,100,50S77.6,100,50,100,0,77.6,0,50,22.4,0,50,0Z" transform="scale(0.95) translate(2, 2)"/>
-                    </filter>
-                    
+                  >
+                    <path d="M50,0C77.6,0,100,22.4,100,50S77.6,100,50,100,0,77.6,0,50,22.4,0,50,0Z" />
                   </svg>
                  
                   <Image
