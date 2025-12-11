@@ -49,14 +49,14 @@ export function HeroSection() {
         delay: 0.6,
       });
       gsap.from('.hero-buttons', {
-        duration: 1,
+        duration: 1.2,
         y: 50,
         opacity: 0,
         ease: 'power3.out',
         delay: 0.8,
       });
       gsap.from('.hero-image', {
-        duration: 1.2,
+        duration: 1.3,
         scale: 0.9,
         opacity: 0,
         ease: 'power3.out',
@@ -67,7 +67,7 @@ export function HeroSection() {
   );
 
   return (
-    <div id="about" className="relative h-[100vh] overflow-hidden" ref={container}>
+    <div id="about" className="relative h-[130vh] overflow-hidden" ref={container}>
       {heroBg && (
         <>
           <Image

@@ -18,8 +18,8 @@ const fontBody = Alegreya({
 });
 
 export const metadata: Metadata = {
-  title: 'Artifolio | Your Name',
-  description: 'A personal portfolio to showcase skills, projects, and experience.',
+  title: 'VrutiRupapara',
+  description: 'Portfolio Of Vruti Rupapara',
 };
 
 export default function RootLayout({

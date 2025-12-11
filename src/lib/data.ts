@@ -42,12 +42,12 @@ export const portfolioData: PortfolioData = {
     },
     {
       
-      title: 'Agritech Platform (AgroChain)',
+      title: 'Agritech Platform',
       description:
       'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
       image: 'project-1',
-      liveSiteUrl: '#',
-      repositoryUrl: '#',
+      liveSiteUrl: 'https://vruti26.github.io/Agritech/',
+      repositoryUrl: 'https://github.com/Vruti26/Agritech',
       tags: ['Sentinel API',
         'Next.js',
         'TypeScript',
