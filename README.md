@@ -1,6 +1,8 @@
-Portfolio 
+## Portfolio 
 
-This is a modern, fully-responsive, and customizable portfolio website template built with Next.js, Tailwind CSS, ShadCN UI, and Google's Genkit for AI-powered features. It's designed to be easily personalized and deployed on Firebase App Hosting.
+This is a modern, fully-responsive, and customizable portfolio website template built with Next.js, Tailwind CSS, ShadCN UI, and Google's Genkit for AI-powered features. It's designed to be easily personalized and deployed on Vercel
+
+You can view it on https://vruti-portfolio.vercel.app
 
 ## ✨ Features
 
