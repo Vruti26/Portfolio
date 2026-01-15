@@ -36,6 +36,9 @@ export type Experience = {
 };
 
 export type PortfolioData = {
+  location: string;
+  email: string;
+  phone: string;
   personalInfo: PersonalInfo;
   socialLinks: SocialLink[];
   skills: Skill[];
