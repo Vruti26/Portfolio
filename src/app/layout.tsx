@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description: portfolioData.personalInfo.bio,
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
