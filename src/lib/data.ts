@@ -17,7 +17,6 @@ export const portfolioData: PortfolioData = {
     { name: 'CodePen', url: 'https://codepen.io/Vruti26' },
   ],
   skills: [
-    
     { name: 'Firebase', proficiency: 75 },
     { name: 'Next.js', proficiency: 90 },
     { name: 'Tailwind CSS', proficiency: 92 },
@@ -27,37 +26,30 @@ export const portfolioData: PortfolioData = {
 
     { name: 'Solidity (Beginner)', proficiency: 65 },
     { name: 'Git & GitHub', proficiency: 90 },
-
-  
   ],
   projects: [
     {
       title: 'Secret Letters – Personalized Message Generator',
-      description:
-        'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
+      description: 'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
       image: 'project-2',
       liveSiteUrl: 'https://vrletter.vercel.app',
       repositoryUrl: 'https://github.com/Vruti26/Letter',
       tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
     },
     {
-      
       title: 'Agritech Platform',
-      description:
-      'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
+      description: 'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
       image: 'project-1',
       liveSiteUrl: 'https://vruti26.github.io/Agritech/',
       repositoryUrl: 'https://github.com/Vruti26/Agritech',
       tags: ['Sentinel API',
         'Next.js',
         'TypeScript',
-       'Remote Sensing',
-        
+        'Remote Sensing',
+
         'NDVI',
-        'Tailwind CSS'],  
-      },
-     
-    
+        'Tailwind CSS'],
+    },
   ],
   experience: [
     {
@@ -84,5 +76,8 @@ export const portfolioData: PortfolioData = {
         'Contributed actively to club activities including event assistance, promotional work, and student engagement.',
       ],
     },
-  ]
+  ],
+  location: '',
+  email: '',
+  phone: ''
 };
