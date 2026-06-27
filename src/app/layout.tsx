@@ -19,9 +19,8 @@ const fontBody = Alegreya({
 });
 
 // This defines a circular SVG icon to be used as a favicon
-const circularIcon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23a855f7'/><text x='50' y='65' font-family='monospace' font-size='45' font-weight='bold' fill='white' text-anchor='middle'>&lt;/&gt;</text></svg>`;
-
-export const metadata: Metadata = {
+const circularIcon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23a855f7'/><path d='M50 30 L67.3 40 V60 L50 70 L32.7 60 V40 Z' fill='none' stroke='white' stroke-width='6' stroke-linejoin='round'/><circle cx='50' cy='50' r='6' fill='white'/></svg>`;export const metadata: Metadata = {
+ 
   title: {
     default: `${portfolioData.personalInfo.name} | ${portfolioData.personalInfo.title}`,
     template: `%s | ${portfolioData.personalInfo.name}`,

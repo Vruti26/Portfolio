@@ -17,14 +17,19 @@ export const portfolioData: PortfolioData = {
     { name: 'CodePen', url: 'https://codepen.io/Vruti26' },
   ],
   skills: [
+    { name: 'Java', proficiency: 75 },
+    { name: 'C language', proficiency: 85 },
+    { name: 'Python', proficiency: 75 },
+    { name: 'Solidity (Beginner)', proficiency: 65 },
+
     { name: 'Firebase', proficiency: 75 },
     { name: 'Next.js', proficiency: 90 },
     { name: 'Tailwind CSS', proficiency: 92 },
-    { name: 'Python', proficiency: 75 },
-    { name: 'C language', proficiency: 85 },
+    
+   
     { name: 'JavaScript', proficiency: 95 },
 
-    { name: 'Solidity (Beginner)', proficiency: 65 },
+   
     { name: 'Git & GitHub', proficiency: 90 },
   ],
   projects: [
