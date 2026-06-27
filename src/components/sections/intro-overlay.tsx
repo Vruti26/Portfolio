@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
@@ -151,17 +150,17 @@ export function IntroOverlay({ onComplete }: { onComplete: () => void }) {
               <path d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-8.82-80.28-33.59-86.29C136.84-6.57 114.13-5.82 88-2.82S34.73 11.45 16.71 48.24C-1.5 66.64-4.88 125.2 39 153.73z" fill="none" />
             </clipPath>
             <linearGradient id="linear-gradient" x1="102.94" y1="154.47" x2="102.94" y2="36.93" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stopColor="#fff5cc" />
-              <stop offset="0.01" stopColor="#faf0c8" />
-              <stop offset="0.19" stopColor="#c2b599" />
-              <stop offset="0.35" stopColor="#998977" />
-              <stop offset="0.47" stopColor="#806f62" />
-              <stop offset="0.54" stopColor="#77655a" />
-              <stop offset="0.6" stopColor="#77655a" />
-              <stop offset="1" stopColor="#77655a" />
+              <stop offset="0" stopColor="#a68b77" />
+              <stop offset="0.01" stopColor="#967969" />
+              <stop offset="0.19" stopColor="#85685a" />
+              <stop offset="0.35" stopColor="#77655a" />
+              <stop offset="0.47" stopColor="#6e5a4f" />
+              <stop offset="0.54" stopColor="#665246" />
+              <stop offset="0.6" stopColor="#5e4a3d" />
+              <stop offset="1" stopColor="#5e4a3d" />
             </linearGradient>
           </defs>
-          <path className="bg" d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-10.51-57-35.28-63-50.22 17-76.31 20-60.12-15.88-78.32 2.51S-4.88 125.2 39 153.73z" fill="rgb(111, 220, 191)" />
+          <path className="bg" d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-10.51-57-35.28-63-50.22 17-76.31 20-60.12-15.88-78.32 2.51S-4.88 125.2 39 153.73z" fill="rgb(168, 85, 247)" />
           <g clipPath="url(#background-clip)">
             <g className="me" opacity="0">
               <g className="body">
@@ -213,7 +212,7 @@ export function IntroOverlay({ onComplete }: { onComplete: () => void }) {
       
       <div className="absolute bottom-10 left-0 w-full text-center pointer-events-none">
         <p className="font-mono text-cyan-400 text-sm animate-pulse">
-          &gt; Shake to trigger dizzy mode <span className="mx-2">|</span> Click to play
+          &gt; Shake to trigger dizzy mode <span className="mx-2">|</span> Close to see my portfolio
         </p>
       </div>
     </div>
