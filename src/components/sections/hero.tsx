@@ -211,8 +211,8 @@ export function HeroSection() {
                   <Code2 className="h-5 w-5 text-cyan-400 md:h-6 md:w-6" />
                 </div>
                 <div>
-                  <div className="font-bold text-slate-200 text-sm md:text-base">React</div>
-                  <div className="text-[10px] text-slate-400 md:text-xs">Next.js Expert</div>
+                  <div className="font-bold text-slate-200 text-sm md:text-base">Frontend</div>
+                  <div className="text-[10px] text-slate-400 md:text-xs">Next.js React.js</div>
                 </div>
               </div>
             </div>
@@ -223,8 +223,8 @@ export function HeroSection() {
                   <Database className="h-5 w-5 text-green-400 md:h-6 md:w-6" />
                 </div>
                 <div>
-                  <div className="font-bold text-slate-200 text-sm md:text-base">Node.js</div>
-                  <div className="text-[10px] text-slate-400 md:text-xs">Full Stack</div>
+                  <div className="font-bold text-slate-200 text-sm md:text-base">Backend</div>
+                  <div className="text-[10px] text-slate-400 md:text-xs">Firebase, Node</div>
                 </div>
               </div>
             </div>
@@ -235,8 +235,8 @@ export function HeroSection() {
                   <FileCode2 className="h-5 w-5 text-yellow-400 md:h-6 md:w-6" />
                 </div>
                 <div>
-                  <div className="font-bold text-slate-200 text-sm md:text-base">JavaScript</div>
-                  <div className="text-[10px] text-slate-400 md:text-xs">ES6+ & TS</div>
+                  <div className="font-bold text-slate-200 text-sm md:text-base">Languages</div>
+                  <div className="text-[10px] text-slate-400 md:text-xs">Java, Solidity, Python</div>
                 </div>
               </div>
             </div>
