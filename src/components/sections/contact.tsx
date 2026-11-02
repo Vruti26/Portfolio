@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Codepen, Terminal, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Codepen, Terminal, CheckCircle2, Loader2 } from 'lucide-react';
 import { portfolioData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { useGSAP } from '@gsap/react';
@@ -15,15 +15,39 @@ export function ContactSection() {
   const container = useRef(null);
   const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
-    // Simulate network request
-    setTimeout(() => {
-      setFormStatus('success');
-      // Reset after showing success message
-      setTimeout(() => setFormStatus('idle'), 3000);
-    }, 1500);
+    
+    // 1. Grab form data
+    const formData = new FormData(e.currentTarget);
+    
+    // 2. Add your Web3Forms access key (REPLACE WITH YOUR ACTUAL KEY)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string);
+
+    try {
+      // 3. Send the data to Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        (e.target as HTMLFormElement).reset(); // Clear the form
+        setTimeout(() => setFormStatus('idle'), 3000);
+      } else {
+        console.error("Form error:", data);
+        setFormStatus('idle'); // Reset on error
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setFormStatus('idle');
+      alert("Failed to send message. Please check your connection.");
+    }
   };
 
   useGSAP(
@@ -162,6 +186,7 @@ export function ContactSection() {
                       <label className="text-xs font-mono text-cyan-400 ml-1">var name =</label>
                       <input 
                         type="text" 
+                        name="name"  // Added name attribute
                         required
                         placeholder='"Sanne Joshi"'
                         className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -171,6 +196,7 @@ export function ContactSection() {
                       <label className="text-xs font-mono text-cyan-400 ml-1">var email =</label>
                       <input 
                         type="email" 
+                        name="email" // Added name attribute
                         required
                         placeholder='"sanne@example.com"'
                         className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -182,6 +208,7 @@ export function ContactSection() {
                     <label className="text-xs font-mono text-cyan-400 ml-1">var subject =</label>
                     <input 
                       type="text" 
+                      name="subject" // Added name attribute
                       required
                       placeholder='"Project Inquiry"'
                       className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -191,6 +218,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <label className="text-xs font-mono text-cyan-400 ml-1">var message =</label>
                     <textarea 
+                      name="message" // Added name attribute
                       required
                       rows={5}
                       placeholder='"Hello, I would like to discuss..."'
