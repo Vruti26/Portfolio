@@ -44,7 +44,7 @@ export const portfolioData: PortfolioData = {
     {
       title: 'Verseflow-Distraction-free reading platform-built platforms',
       description: 'A Modern Platform for Avid Readers and writers, VerseFlow is a seamless digital library and publishing platform designed to bridge the gap between storytellers and their audience. Built to offer a superior, lag-free experience for users (especially in regions where platforms like Wattpad face server issues), VerseFlow focuses on speed, readability, and community interaction.',
-      image: 'project-4',
+      image: 'project-3',
       liveSiteUrl: 'https://verseflow-vr.vercel.app',
       repositoryUrl: 'https://github.com/Vruti26/Verseflow',
       tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
