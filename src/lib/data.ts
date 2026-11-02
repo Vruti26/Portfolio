@@ -33,13 +33,30 @@ export const portfolioData: PortfolioData = {
     { name: 'Git & GitHub', proficiency: 90 },
   ],
   projects: [
+      {
+      title: 'Panopticon Real-Time Mempool IDS & Active Defense Engine',
+      description: 'An active, off-chain security framework that monitors local blockchain mempools to detect, intercept, and frontrun malicious transactions before they are confirmed.',
+      image: 'project-2',
+      
+      repositoryUrl: 'https://github.com/Vruti26/Panopticon',
+      tags: ['Solidity', 'Python', 'Node.js', 'Ether.js'],
+    },
     {
+      title: 'Verseflow-Distraction-free reading platform-built platforms',
+      description: 'A Modern Platform for Avid Readers and Writers VerseFlow is a seamless digital library and publishing platform designed to bridge the gap between storytellers and their audience. Built to offer a superior, lag-free experience for users (especially in regions where platforms like Wattpad face server issues), VerseFlow focuses on speed, readability, and community interaction.',
+      image: 'project-4',
+      liveSiteUrl: 'https://verseflow-vr.vercel.app',
+      repositoryUrl: 'https://github.com/Vruti26/Verseflow',
+      tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
+    },
+    
+     {
       title: 'Secret Letters – Personalized Message Generator',
       description: 'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
-      image: 'project-2',
+      image: 'project-3',
       liveSiteUrl: 'https://vrletter.vercel.app',
       repositoryUrl: 'https://github.com/Vruti26/Letter',
-      tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
+      tags: ['Next.js', 'Tailwind CSS'],
     },
     {
       title: 'Agritech Platform',
@@ -57,6 +74,22 @@ export const portfolioData: PortfolioData = {
     },
   ],
   experience: [
+     {
+      role: 'Frontend Developer Intern',
+      company: 'InfoLabz IT Services Pvt. Ltd.',
+      period: 'July 2026',
+      description: [
+        'Developed dynamic web applications (Real-Time News Aggregator, Crypto Tracker) using React.js, React Hooks, and React Router',
+      ],
+    },
+     {
+      role: 'Evaluation Coordinator – Hack the Spring 2026',
+      company: 'GEC Gandhinagar',
+      period: 'Feb 2026',
+      description: [
+        'Recruited and onboarded the expert judging panel while coordinating seamless pitch sessions.',
+      ],
+    },
     {
       role: 'Design Lead',
       company: 'Club IDE – GEC Gandhinagar',
@@ -78,7 +111,7 @@ export const portfolioData: PortfolioData = {
       company: 'Club IDE – GEC Gandhinagar',
       period: '2023 – 2024',
       description: [
-        'Contributed actively to club activities including event assistance, promotional work, and student engagement.',
+        'Contributed actively to club activities, including event assistance, promotional work, and student engagement.',
       ],
     },
   ],
