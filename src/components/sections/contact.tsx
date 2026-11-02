@@ -23,7 +23,7 @@ export function ContactSection() {
     const formData = new FormData(e.currentTarget);
     
     // 2. Add your Web3Forms access key (REPLACE WITH YOUR ACTUAL KEY)
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string);
+    formData.append("access_key", process.env.NEXT_WEB3FORMS_KEY as string);
 
     try {
       // 3. Send the data to Web3Forms API
