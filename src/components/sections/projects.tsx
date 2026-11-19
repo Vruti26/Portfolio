@@ -10,7 +10,9 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function ProjectsSection() {
   const container = useRef(null);
@@ -34,7 +36,6 @@ export function ProjectsSection() {
         }
       );
       
-      // Animate Section Header
       gsap.fromTo(
         '.section-header',
         { opacity: 0, x: -50 },
@@ -56,7 +57,6 @@ export function ProjectsSection() {
     <section id="projects" className="w-full py-20 bg-[#0f172a] text-slate-200" ref={container}>
       <div className="container px-4 md:px-6">
         
-        {/* Section Header */}
         <div className="section-header flex items-center gap-4 mb-16 max-w-6xl mx-auto">
           <span className="font-mono text-purple-400 text-xl font-bold">03</span>
           <h2 className="font-mono text-3xl md:text-4xl font-bold flex gap-2">
@@ -67,7 +67,6 @@ export function ProjectsSection() {
           <div className="h-[1px] bg-gradient-to-r from-purple-500/50 to-transparent flex-1 ml-4"></div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {portfolioData.projects.map((project, index) => {
             const projectImage = PlaceHolderImages.find(img => img.id === project.image);
@@ -77,7 +76,6 @@ export function ProjectsSection() {
                 key={index} 
                 className="project-card group relative flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-[#1e293b] transition-all duration-300 hover:-translate-y-2 hover:border-purple-500 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
               >
-                {/* Image Area with Overlay */}
                 <div className="relative h-56 w-full overflow-hidden bg-[#020617]">
                   {projectImage ? (
                     <Image
@@ -86,6 +84,7 @@ export function ProjectsSection() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-40"
                       data-ai-hint={projectImage.imageHint}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-slate-700">
@@ -93,11 +92,11 @@ export function ProjectsSection() {
                     </div>
                   )}
                   
-                  {/* Hover Overlay with Links */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-6 bg-black/20 opacity-100 transition-opacity duration-300 md:bg-transparent md:opacity-0 md:group-hover:bg-black/20 md:group-hover:opacity-100">                    {project.liveSiteUrl && (
+                  <div className="absolute inset-0 flex items-center justify-center gap-6 bg-black/20 opacity-100 transition-opacity duration-300 md:bg-transparent md:opacity-0 md:group-hover:bg-black/20 md:group-hover:opacity-100">
+                    {project.liveSiteUrl && (
                       <Link 
                         rel="noopener noreferrer"
-                      aria-label={`Open ${project.title} live website`}
+                        aria-label={`Open ${project.title} live website`}
                         href={project.liveSiteUrl} 
                         target="_blank"
                         className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-white shadow-lg transition-transform hover:scale-110 hover:bg-cyan-400"
@@ -108,8 +107,8 @@ export function ProjectsSection() {
                     )}
                     {project.repositoryUrl && (
                       <Link 
-                      rel="noopener noreferrer"
-                      aria-label={`Open ${project.title} source code`}
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} source code`}
                         href={project.repositoryUrl} 
                         target="_blank"
                         className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-white border border-slate-600 shadow-lg transition-transform hover:scale-110 hover:border-purple-500"
@@ -121,7 +120,6 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Content Area */}
                 <div className="flex flex-grow flex-col p-6">
                   <h3 className="mb-2 font-mono text-xl font-bold text-cyan-400 group-hover:text-purple-400 transition-colors">
                     {project.title}
@@ -131,7 +129,6 @@ export function ProjectsSection() {
                     {project.description}
                   </p>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map(tag => (
                       <span 
@@ -142,7 +139,6 @@ export function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-                  
                 </div>
               </div>
             );

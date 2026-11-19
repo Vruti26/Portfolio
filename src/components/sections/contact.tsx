@@ -9,7 +9,9 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function ContactSection() {
   const container = useRef(null);
@@ -19,10 +21,7 @@ export function ContactSection() {
     e.preventDefault();
     setFormStatus('submitting');
     
-    // 1. Grab form data
     const formData = new FormData(e.currentTarget);
-    
-    // 2. Add your Web3Forms access key 
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
     if (!accessKey) {
@@ -33,7 +32,6 @@ export function ContactSection() {
     
     formData.append('access_key', accessKey);
     try {
-      // 3. Send the data to Web3Forms API
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -43,11 +41,11 @@ export function ContactSection() {
 
       if (data.success) {
         setFormStatus('success');
-        (e.target as HTMLFormElement).reset(); // Clear the form
+        (e.target as HTMLFormElement).reset();
         setTimeout(() => setFormStatus('idle'), 3000);
       } else {
         console.error("Form error:", data);
-        setFormStatus('idle'); // Reset on error
+        setFormStatus('idle');
         alert("Something went wrong. Please try again.");
       }
     } catch (error) {
@@ -59,7 +57,6 @@ export function ContactSection() {
 
   useGSAP(
     () => {
-      // Header Animation
       gsap.fromTo(
         '.section-header',
         { opacity: 0, x: -30 },
@@ -74,7 +71,6 @@ export function ContactSection() {
         }
       );
 
-      // Content Animation
       gsap.from('.contact-element', {
         scrollTrigger: {
           trigger: container.current,
@@ -95,7 +91,6 @@ export function ContactSection() {
     <section id="contact" className="w-full py-20 bg-[#0f172a] text-slate-200" ref={container}>
       <div className="container px-4 md:px-6">
         
-        {/* Section Header */}
         <div className="section-header flex items-center gap-4 mb-16 max-w-6xl mx-auto">
           <span className="font-mono text-purple-400 text-xl font-bold">05</span>
           <h2 className="font-mono text-3xl md:text-4xl font-bold flex gap-2">
@@ -107,8 +102,6 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          
-          {/* Left Column: Contact Info */}
           <div className="contact-element flex flex-col gap-8">
             <div className="space-y-4">
               <h3 className="font-mono text-2xl font-bold text-slate-100">
@@ -132,7 +125,6 @@ export function ContactSection() {
                 </div>
               </div>
 
-        
               <div className="flex items-start gap-4 group">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1e293b] border border-slate-700 text-purple-400 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_rgba(192,132,252,0.2)] transition-all duration-300">
                   <MapPin className="h-5 w-5" />
@@ -146,7 +138,6 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Socials */}
             <div className="pt-4">
               <h4 className="font-mono text-sm text-slate-500 mb-4">// Find me on</h4>
               <div className="flex gap-4">
@@ -168,11 +159,8 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column: Form */}
           <div className="contact-element">
             <div className="relative rounded-2xl border border-slate-700 bg-[#1e293b]/50 backdrop-blur-sm p-1 shadow-2xl">
-              
-              {/* Terminal Header */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-700/50 bg-[#1e293b] rounded-t-xl">
                 <div className="flex gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-500/80" />
@@ -185,7 +173,6 @@ export function ContactSection() {
                 </div>
               </div>
 
-              {/* Form Content */}
               <div className="p-4 md:p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,7 +180,7 @@ export function ContactSection() {
                       <label className="text-xs font-mono text-cyan-400 ml-1">var name =</label>
                       <input 
                         type="text" 
-                        name="name"  // Added name attribute
+                        name="name"
                         required
                         placeholder='"Sanne Joshi"'
                         className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -203,7 +190,7 @@ export function ContactSection() {
                       <label className="text-xs font-mono text-cyan-400 ml-1">var email =</label>
                       <input 
                         type="email" 
-                        name="email" // Added name attribute
+                        name="email"
                         required
                         placeholder='"sanne@example.com"'
                         className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -215,7 +202,7 @@ export function ContactSection() {
                     <label className="text-xs font-mono text-cyan-400 ml-1">var subject =</label>
                     <input 
                       type="text" 
-                      name="subject" // Added name attribute
+                      name="subject"
                       required
                       placeholder='"Project Inquiry"'
                       className="w-full rounded-lg border border-slate-700 bg-[#0f172a] px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
@@ -225,7 +212,7 @@ export function ContactSection() {
                   <div className="space-y-2">
                     <label className="text-xs font-mono text-cyan-400 ml-1">var message =</label>
                     <textarea 
-                      name="message" // Added name attribute
+                      name="message"
                       required
                       rows={5}
                       placeholder='"Hello, I would like to discuss..."'
@@ -262,7 +249,6 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
