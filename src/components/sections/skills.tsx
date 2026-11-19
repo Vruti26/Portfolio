@@ -3,17 +3,13 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { portfolioData } from '@/lib/data';
-import { Code, Terminal } from 'lucide-react';
+import { Code } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 import type { ForwardRefExoticComponent, JSX, RefAttributes, SVGProps } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const skillIcons: { [key: string]: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>> | ((props: React.SVGProps<SVGSVGElement>) => JSX.Element) | string } = {
   'React': (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
@@ -50,37 +46,39 @@ export function SkillsSection() {
   
   useGSAP(
     () => {
-      gsap.fromTo(
-        '.section-header',
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top 85%',
+      if (typeof window !== 'undefined') {
+        gsap.fromTo(
+          '.section-header',
+          { opacity: 0, x: -30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: container.current,
+              start: 'top 85%',
+            }
           }
-        }
-      );
+        );
 
-      gsap.fromTo(
-        '.skill-card',
-        { opacity: 0, scale: 0.8, y: 30 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          stagger: 0.05,
-          duration: 0.5,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
+        gsap.fromTo(
+          '.skill-card',
+          { opacity: 0, scale: 0.8, y: 30 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            stagger: 0.05,
+            duration: 0.5,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+              trigger: container.current,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      }
     },
     { scope: container }
   );
