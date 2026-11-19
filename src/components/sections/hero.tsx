@@ -146,7 +146,16 @@ export function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              
+              <Button
+  size="lg"
+  variant="outline"
+  asChild
+  className="border-2 border-cyan-500 bg-transparent px-8 py-6 text-lg font-bold text-cyan-400 hover:bg-cyan-500 hover:text-white"
+>
+  <a href="/Vruti_Rupapara_Resume.pdf" download>
+    Download Resume
+  </a>
+</Button>
               <Button 
                 size="lg" 
                 variant="outline" 
@@ -193,6 +202,7 @@ export function HeroSection() {
                   src={headshot.imageUrl}
                   alt={headshot.description}
                   fill
+                  sizes="380px"
                   className="object-cover"
                   priority
                   data-ai-hint={headshot.imageHint}

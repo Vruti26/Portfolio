@@ -84,6 +84,7 @@ export function ProjectsSection() {
                       src={projectImage.imageUrl}
                       alt={project.title}
                       fill
+                      sizes="500px"
                       className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-40"
                       data-ai-hint={projectImage.imageHint}
                     />
@@ -142,6 +143,16 @@ export function ProjectsSection() {
                       </span>
                     ))}
                   </div>
+                  {project.repositoryUrl && (
+  <a
+    href={project.repositoryUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-5 inline-flex items-center gap-2 text-sm font-mono text-cyan-400 hover:text-purple-400 transition-colors"
+  >
+    Explore Project <ExternalLink size={16} />
+  </a>
+)}
                 </div>
               </div>
             );
