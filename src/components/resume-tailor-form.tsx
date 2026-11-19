@@ -75,11 +75,15 @@ export function ResumeTailorForm({ projectPortfolio }: { projectPortfolio: strin
             <Accordion type="single" collapsible className="w-full space-y-2">
               {state.data.tailoredBulletPoints.map((point, index) => (
                 <AccordionItem value={`item-${index}`} key={index} className="bg-background border rounded-lg px-4">
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline">{point}</AccordionTrigger>
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline">
+                    {point}
+                  </AccordionTrigger>
                   <AccordionContent>
                     <div className="flex items-start gap-3 p-4 bg-secondary/50 rounded-md">
                       <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <p className="text-muted-foreground">{state.data.explanations[index]}</p>
+                      <p className="text-muted-foreground">
+                        {state.data?.explanations?.[index] || 'No explanation available.'}
+                      </p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
