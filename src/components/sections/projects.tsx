@@ -58,7 +58,7 @@ export function ProjectsSection() {
         
         {/* Section Header */}
         <div className="section-header flex items-center gap-4 mb-16 max-w-6xl mx-auto">
-          <span className="font-mono text-purple-400 text-xl font-bold">02</span>
+          <span className="font-mono text-purple-400 text-xl font-bold">03</span>
           <h2 className="font-mono text-3xl md:text-4xl font-bold flex gap-2">
             <span className="text-purple-400">&lt;</span>
             <span className="text-cyan-400">Projects</span>
@@ -94,9 +94,10 @@ export function ProjectsSection() {
                   )}
                   
                   {/* Hover Overlay with Links */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    {project.liveSiteUrl && (
+                  <div className="absolute inset-0 flex items-center justify-center gap-6 bg-black/20 opacity-100 transition-opacity duration-300 md:bg-transparent md:opacity-0 md:group-hover:bg-black/20 md:group-hover:opacity-100">                    {project.liveSiteUrl && (
                       <Link 
+                        rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} live website`}
                         href={project.liveSiteUrl} 
                         target="_blank"
                         className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500 text-white shadow-lg transition-transform hover:scale-110 hover:bg-cyan-400"
@@ -107,6 +108,8 @@ export function ProjectsSection() {
                     )}
                     {project.repositoryUrl && (
                       <Link 
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} source code`}
                         href={project.repositoryUrl} 
                         target="_blank"
                         className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-white border border-slate-600 shadow-lg transition-transform hover:scale-110 hover:border-purple-500"

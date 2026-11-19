@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/sheet"
 
 const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Experience', href: '#experience' },
+    { name: 'Home', href: '#home' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
   // { name: 'AI Tailor', href: '#ai-tailor' },
 ];
 

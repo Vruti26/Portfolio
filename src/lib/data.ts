@@ -3,11 +3,11 @@ import type { PortfolioData } from './types';
 export const portfolioData: PortfolioData = {
   personalInfo: {
     name: 'Vruti Rupapara',
-    title: 'Creative Developer',
-    bio: "CE student at GEC Gandhinagar skilled in Next.js, GSAP, DSA, Firebase, and databases. I’ve built projects in Web3, AI, agritech, and UI-rich applications, and I love creating fast, scalable, and user-centric solutions",
+    title: 'Full-Stack Developer | Cybersecurity Enthusiast',
+    bio: 'Computer Engineering student at Government Engineering College, Gandhinagar, graduating in 2027. I enjoy building interactive web applications and exploring cybersecurity, DevSecOps, and modern technologies. My work spans full-stack development, agricultural intelligence, and security-focused projects.',
     contact: {
-      email: 'rupaparavruti@gmail.com.com',
-      phone: '+1 (91) 7861880391',
+      email: 'rupaparavruti@gmail.com',
+      phone: '',
     },
     headshotImage: 'headshot',
   },
@@ -33,44 +33,37 @@ export const portfolioData: PortfolioData = {
     { name: 'Git & GitHub', proficiency: 90 },
   ],
   projects: [
-      {
-      title: 'Panopticon Real-Time Mempool IDS & Active Defense Engine',
-      description: 'An active, off-chain security framework that monitors local blockchain mempools to detect, intercept, and frontrun malicious transactions before they are confirmed.',
+    {
+      title: 'Panopticon — Mempool Intrusion Detection System',
+      description: 'A blockchain security project exploring real-time mempool monitoring, suspicious transaction detection, and proactive security mechanisms. The project focuses on understanding transaction behaviour and identifying potentially malicious activity before confirmation.',
       image: 'project-4',
-      
       repositoryUrl: 'https://github.com/Vruti26/Panopticon',
-      tags: ['Solidity', 'Python', 'Node.js', 'Ether.js'],
+      tags: ['Solidity', 'Python', 'Node.js', 'Ethers.js'],
     },
     {
-      title: 'Verseflow-Distraction-free reading platform-built platforms',
-      description: 'A Modern Platform for Avid Readers and writers, VerseFlow is a seamless digital library and publishing platform designed to bridge the gap between storytellers and their audience. Built to offer a superior, lag-free experience for users (especially in regions where platforms like Wattpad face server issues), VerseFlow focuses on speed, readability, and community interaction.',
+      title: 'VerseFlow — Reading & Publishing Platform',
+      description: 'A digital reading and publishing platform designed to connect readers and writers through a smooth, distraction-free experience. Built with Next.js, Tailwind CSS, Firebase, and GSAP.',
       image: 'project-3',
       liveSiteUrl: 'https://verseflow-vr.vercel.app',
       repositoryUrl: 'https://github.com/Vruti26/Verseflow',
       tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
     },
     
-     {
-      title: 'Secret Letters – Personalized Message Generator',
-      description: 'A creative and interactive platform where users can generate personalized secret letters based on their name initials. The project features smooth GSAP animations, elegant UI built with Next.js and Tailwind CSS, and Firebase for storing user entries. Designed to deliver a unique and emotional experience with dynamic letter generation and clean, modern visuals.',
+    {
+      title: 'Secret Letters — Personalized Message Generator',
+      description: 'An interactive platform for generating personalized secret letters using name initials. It combines animated interactions, a modern interface, and Firebase integration.',
       image: 'project-2',
       liveSiteUrl: 'https://vrletter.vercel.app',
       repositoryUrl: 'https://github.com/Vruti26/Letter',
-      tags: ['Next.js', 'Tailwind CSS'],
+      tags: ['Next.js', 'Tailwind CSS', 'Firebase', 'GSAP'],
     },
     {
-      title: 'Agritech Platform',
-      description: 'A smart agritech application that integrates the SentinelHub API to fetch satellite imagery and generate crop health insights. The system processes NDVI data, visualizes vegetation health, and provides farmers with easy-to-understand geospatial maps. Built with a clean Next.js UI and optimized API calls for fast rendering of satellite data',
+      title: 'Agritch — Agricultural Intelligence Platform',
+      description: 'A farmer-focused application that combines satellite vegetation observations, weather information, and soil data to provide understandable field insights and agricultural recommendations.',
       image: 'project-1',
       liveSiteUrl: 'https://vruti26.github.io/Agritech/',
       repositoryUrl: 'https://github.com/Vruti26/Agritech',
-      tags: ['Sentinel API',
-        'Next.js',
-        'TypeScript',
-        'Remote Sensing',
-
-        'NDVI',
-        'Tailwind CSS'],
+      tags: ['Python', 'Flask', 'JavaScript', 'Leaflet', 'Sentinel Hub', 'Open-Meteo'],
     },
   ],
   experience: [
@@ -115,7 +108,7 @@ export const portfolioData: PortfolioData = {
       ],
     },
   ],
-  location: '',
-  email: '',
-  phone: ''
+  location: 'Gujarat, India',
+  email: 'rupaparavruti@gmail.com',
+  phone: '',
 };

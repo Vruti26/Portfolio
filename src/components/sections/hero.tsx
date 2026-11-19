@@ -187,7 +187,7 @@ export function HeroSection() {
             />
 
             {/* Frame Sizing Adjusted: h-[230px] w-[230px] base */}
-            <div className="profile-frame relative h-[230px] w-[230px] overflow-hidden rounded-full border-[3px] border-purple-500 bg-[#1e293b] shadow-[0_0_30px_rgba(192,132,252,0.3)] sm:pt-3 sm:h-[300px] sm:w-[300px]md:pt-6 md:h-[380px] md:w-[380px]">
+            <div className="profile-frame relative h-[230px] w-[230px] overflow-hidden rounded-full border-[3px] border-purple-500 bg-[#1e293b] shadow-[0_0_30px_rgba(192,132,252,0.3)] sm:pt-3 sm:h-[300px] sm:w-[300px] md:pt-6 md:h-[380px] md:w-[380px]">
               {headshot ? (
                 <Image
                   src={headshot.imageUrl}

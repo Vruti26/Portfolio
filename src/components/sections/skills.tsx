@@ -92,7 +92,7 @@ export function SkillsSection() {
         
         {/* Section Header */}
         <div className="section-header flex items-center gap-4 mb-16 max-w-6xl mx-auto">
-          <span className="font-mono text-purple-400 text-xl font-bold">03</span>
+          <span className="font-mono text-purple-400 text-xl font-bold">02</span>
           <h2 className="font-mono text-3xl md:text-4xl font-bold flex gap-2">
             <span className="text-purple-400">&lt;</span>
             <span className="text-cyan-400">Skills</span>

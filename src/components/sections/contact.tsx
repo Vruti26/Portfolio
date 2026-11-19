@@ -23,8 +23,15 @@ export function ContactSection() {
     const formData = new FormData(e.currentTarget);
     
     // 2. Add your Web3Forms access key 
-   formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string);
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
+    if (!accessKey) {
+      setFormStatus('idle');
+      alert('Contact form is not configured yet. Please email me directly.');
+      return;
+    }
+    
+    formData.append('access_key', accessKey);
     try {
       // 3. Send the data to Web3Forms API
       const response = await fetch("https://api.web3forms.com/submit", {
